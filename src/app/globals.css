@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+/* ─── Brand tokens ─── */
+:root {
+  /* Brand blues */
+  --bb-blue:        #0A4D7E;
+  --bb-blue-deep:   #083A60;
+  --bb-blue-ink:    #052742;
+  --bb-yellow:      #F2C500;
+  --bb-yellow-soft: #F7D94C;
+  --bb-yellow-ink:  #C99E00;
+
+  /* Neutrals */
+  --bb-cream:       #FBF7EE;
+  --bb-paper:       #F5EFE2;
+  --bb-stone:       #E6DFCE;
+  --bb-ink:         #1A1410;
+  --bb-ink-soft:    #4A423A;
+  --bb-ink-mute:    #8A8174;
+  --bb-line:        #DDD3BC;
+  --bb-white:       #FFFFFF;
+
+  /* Semantic */
+  --bb-success:     #2F7A4D;
+  --bb-warning:     #B8761E;
+  --bb-error:       #B33A2E;
+
+  /* Spacing (4-based) */
+  --sp-1: 4px;  --sp-2: 8px;   --sp-3: 12px; --sp-4: 16px;
+  --sp-5: 20px; --sp-6: 24px;  --sp-8: 32px; --sp-10: 40px;
+  --sp-12: 48px; --sp-16: 64px; --sp-20: 80px; --sp-24: 96px;
+
+  /* Radii */
+  --r-sm: 4px; --r-md: 8px; --r-lg: 14px; --r-xl: 22px; --r-pill: 999px;
+
+  /* Shadows */
+  --sh-sm: 0 1px 2px rgba(8,58,96,.06), 0 1px 1px rgba(8,58,96,.04);
+  --sh-md: 0 4px 16px rgba(8,58,96,.08), 0 2px 4px rgba(8,58,96,.04);
+  --sh-lg: 0 12px 40px rgba(8,58,96,.12), 0 4px 12px rgba(8,58,96,.06);
+}
+
+/* ─── Tailwind v4 theme extension ─── */
+@theme inline {
+  --color-bb-blue:        var(--bb-blue);
+  --color-bb-blue-deep:   var(--bb-blue-deep);
+  --color-bb-blue-ink:    var(--bb-blue-ink);
+  --color-bb-yellow:      var(--bb-yellow);
+  --color-bb-yellow-soft: var(--bb-yellow-soft);
+  --color-bb-yellow-ink:  var(--bb-yellow-ink);
+  --color-bb-cream:       var(--bb-cream);
+  --color-bb-paper:       var(--bb-paper);
+  --color-bb-stone:       var(--bb-stone);
+  --color-bb-ink:         var(--bb-ink);
+  --color-bb-ink-soft:    var(--bb-ink-soft);
+  --color-bb-ink-mute:    var(--bb-ink-mute);
+  --color-bb-line:        var(--bb-line);
+  --color-bb-white:       var(--bb-white);
+  --color-bb-success:     var(--bb-success);
+  --color-bb-warning:     var(--bb-warning);
+  --color-bb-error:       var(--bb-error);
+
+  --shadow-sm: var(--sh-sm);
+  --shadow-md: var(--sh-md);
+  --shadow-lg: var(--sh-lg);
+
+  --radius-sm: var(--r-sm);
+  --radius-md: var(--r-md);
+  --radius-lg: var(--r-lg);
+  --radius-xl: var(--r-xl);
+  --radius-pill: var(--r-pill);
+}
+
+/* ─── Base reset ─── */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-inter), -apple-system, system-ui, sans-serif;
+  background: var(--bb-paper);
+  color: var(--bb-ink);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
