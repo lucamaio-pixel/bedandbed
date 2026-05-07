@@ -8,6 +8,7 @@ const CITY_HIGHLIGHTS = [
     title: "Il Duomo e l'Orologio Astronomico",
     desc: "Il campanile del Duomo ospita uno degli orologi astronomici più grandi del mondo. Ogni giorno a mezzogiorno lo spettacolo meccanico richiama visitatori da tutta la Sicilia.",
     photoBg: "linear-gradient(160deg, #2a1a0a 0%, #6b4a1a 40%, #c8860a 100%)",
+    photo: W("6/62/Messina_duomo_2.JPG", 600),
     photoLabel: "Duomo di Messina",
   },
   {
@@ -15,6 +16,7 @@ const CITY_HIGHLIGHTS = [
     title: "Lo Stretto di Messina",
     desc: "Il punto più stretto tra Sicilia e Calabria — appena 3 km. Dalla punta di Torre Faro si vedono entrambe le coste e si percepisce la corrente che divide due mari.",
     photoBg: "linear-gradient(160deg, #0a1a3a 0%, #0a4d7e 50%, #1a8ab8 100%)",
+    photo: W("0/00/Lo_Stretto_di_Messina_da_monte_Dinnammare.JPG", 600),
     photoLabel: "Stretto di Messina",
   },
   {
@@ -22,6 +24,7 @@ const CITY_HIGHLIGHTS = [
     title: "Spiaggia di Capo Peloro",
     desc: "La punta più a nord-est della Sicilia, dove il Mar Ionio e il Mar Tirreno si incontrano visibilmente. La spiaggia è a pochi passi dalla Laguna di Capo Peloro — un ecosistema unico.",
     photoBg: "linear-gradient(160deg, #0a3a2a 0%, #0a7e5a 40%, #3ab8a0 70%, #7ad4c8 100%)",
+    photo: W("9/93/Torre_Faro_lighthouse_-_Capo_Peloro_-_Messina,_Italy_-_20_Oct._2010.jpg", 600),
     photoLabel: "Capo Peloro · Torre Faro",
   },
   {
@@ -29,6 +32,7 @@ const CITY_HIGHLIGHTS = [
     title: "Museo Regionale di Messina",
     desc: "Uno dei musei più ricchi della Sicilia. Ospita opere di Caravaggio (la Resurrezione di Lazzaro e l'Adorazione dei Pastori), Antonello da Messina e sculture rinascimentali.",
     photoBg: "linear-gradient(160deg, #1a0a2a 0%, #4a2a6a 50%, #8a5aaa 100%)",
+    photo: W("6/6a/Museo_regionale_di_messina,_00_ingresso.JPG", 600),
     photoLabel: "Museo Regionale",
   },
   {
@@ -36,6 +40,7 @@ const CITY_HIGHLIGHTS = [
     title: "Ganzirri e i Laghi",
     desc: "Il borgo di pescatori tra il Lago Grande e lo Stretto. I ristoranti sul bordo del lago servono il pesce spada freschissimo e le cozze allevate nelle acque tranquille del lago.",
     photoBg: "linear-gradient(160deg, #0a2a1a 0%, #1a5a3a 50%, #2a8a5a 100%)",
+    photo: W("e/e2/Laghi_di_Ganzirri_-_Messina.jpg", 600),
     photoLabel: "Laghi di Ganzirri",
   },
   {
@@ -43,6 +48,7 @@ const CITY_HIGHLIGHTS = [
     title: "Lungomare e Falce",
     desc: "Il porto falcato che dà nome alla città. Il lungomare è il cuore della vita sociale messinese, con la passeggiata sul porto, i bar e la vista sul continente.",
     photoBg: "linear-gradient(160deg, #1a0a0a 0%, #6a1a1a 30%, #c84a0a 60%, #f0a030 100%)",
+    photo: W("6/65/Pilone_di_Torre_Faro,_Messina,_Italy.jpg", 600),
     photoLabel: "Lungomare di Messina",
   },
 ];
@@ -266,7 +272,7 @@ export default function MessinaPage() {
             {CITY_HIGHLIGHTS.map((h) => (
               <div key={h.title} style={{ background: "var(--bb-white)", border: "1px solid var(--bb-line)", borderRadius: "var(--r-lg)", overflow: "hidden" }}>
                 {/* Photo area */}
-                <div style={{ height: 160, background: h.photoBg, position: "relative", display: "flex", alignItems: "flex-end", padding: "14px 20px" }}>
+                <div style={{ height: 160, background: `url('${h.photo}') center/cover no-repeat, ${h.photoBg}`, position: "relative", display: "flex", alignItems: "flex-end", padding: "14px 20px" }}>
                   <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,.55) 0%, transparent 60%)" }} />
                   <div style={{ position: "relative", zIndex: 1 }}>
                     <span style={{ fontSize: 11, fontWeight: 600, color: "rgba(255,255,255,.8)", letterSpacing: ".06em", textTransform: "uppercase" }}>{h.photoLabel}</span>
