@@ -76,7 +76,7 @@ export default async function PropertyPage({ params }: { params: Promise<{ slug:
           <Badge variant="yellow">Best price · Prenota direttamente</Badge>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: 24 }}>
+        <div className="bb-grid-3">
           {property.rooms.map((room) => (
             <RoomCard
               key={room.id}
@@ -93,7 +93,7 @@ export default async function PropertyPage({ params }: { params: Promise<{ slug:
 
       {/* ─── DOTAZIONI ─── */}
       <section style={{ background: "var(--bb-cream)", borderTop: "1px solid var(--bb-line)", borderBottom: "1px solid var(--bb-line)", padding: "64px 32px" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64 }}>
+        <div className="bb-two-col-info" style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div>
             <h2 style={{ fontFamily: "var(--bb-serif)", fontWeight: 600, fontSize: 30, letterSpacing: "-0.015em", margin: "0 0 24px", color: "var(--bb-blue-ink)" }}>
               Dotazioni

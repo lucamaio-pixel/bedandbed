@@ -31,7 +31,7 @@ export default function ContattiPage() {
         </div>
       </section>
 
-      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "64px 32px", display: "grid", gridTemplateColumns: "1fr 420px", gap: 64, alignItems: "start" }}>
+      <div className="bb-sidebar-grid bb-mobile-pad" style={{ maxWidth: 1200, margin: "0 auto", padding: "64px 32px" }}>
 
         {/* ─── FORM ─── */}
         <div>

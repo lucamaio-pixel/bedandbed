@@ -59,8 +59,8 @@ export default async function DestinationPage({
         </div>
       </section>
 
-      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "56px 32px" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 340px", gap: 64, alignItems: "start" }}>
+      <div className="bb-mobile-pad" style={{ maxWidth: 1200, margin: "0 auto", padding: "56px 32px" }}>
+        <div className="bb-sidebar-grid">
 
           {/* MAIN CONTENT */}
           <div>
@@ -104,7 +104,7 @@ export default async function DestinationPage({
               <h2 style={{ fontFamily: "var(--bb-serif)", fontWeight: 600, fontSize: 28, letterSpacing: "-0.015em", color: "var(--bb-blue-ink)", margin: "0 0 20px" }}>
                 Galleria
               </h2>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12 }}>
+              <div className="bb-gallery-grid">
                 {d.gallery.map((g, i) => (
                   <div
                     key={i}
@@ -193,7 +193,7 @@ export default async function DestinationPage({
           <h2 style={{ fontFamily: "var(--bb-serif)", fontWeight: 600, fontSize: 26, letterSpacing: "-0.015em", color: "var(--bb-blue-ink)", margin: "0 0 24px" }}>
             Altre destinazioni da Messina
           </h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}>
+          <div className="bb-grid-3">
             {DESTINATIONS.filter((dest) => dest.slug !== d.slug).slice(0, 3).map((dest) => (
               <Link
                 key={dest.slug}

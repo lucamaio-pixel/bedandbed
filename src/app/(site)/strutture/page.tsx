@@ -34,8 +34,8 @@ export default function StrutturePage() {
       </section>
 
       {/* ─── CARDS ─── */}
-      <section style={{ maxWidth: 1200, margin: "0 auto", padding: "64px 32px" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 24 }}>
+      <section className="bb-mobile-pad" style={{ maxWidth: 1200, margin: "0 auto", padding: "64px 32px" }}>
+        <div className="bb-grid-3">
           {PROPERTIES.map((p) => (
             <StructureCard
               key={p.slug}

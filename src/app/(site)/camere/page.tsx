@@ -78,7 +78,7 @@ export default function CamerePage() {
         <h2 style={{ fontFamily: "var(--bb-serif)", fontWeight: 600, fontSize: 32, letterSpacing: "-0.015em", margin: "0 0 40px", color: "var(--bb-blue-ink)", textAlign: "center" }}>
           Perché prenotare direttamente
         </h2>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 24 }}>
+        <div className="bb-grid-3">
           {WHY.map(({ icon, title, desc }) => (
             <div key={title} style={{ background: "var(--bb-white)", border: "1px solid var(--bb-line)", borderRadius: "var(--r-lg)", padding: "28px 24px", display: "flex", flexDirection: "column", gap: 14 }}>
               <div style={{ color: "var(--bb-blue)" }}>{icon}</div>

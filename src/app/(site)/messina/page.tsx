@@ -47,7 +47,8 @@ const CITY_HIGHLIGHTS = [
   },
 ];
 
-const U = (id: string) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=900&q=85`;
+const W = (path: string) =>
+  `https://upload.wikimedia.org/wikipedia/commons/thumb/${path}/900px-${path.split("/").pop()}`;
 
 const DAY_TRIPS = [
   {
@@ -56,7 +57,7 @@ const DAY_TRIPS = [
     time: "45 min",
     dir: "Sud · A18",
     photoBg: "linear-gradient(160deg, #1a0800 0%, #5a2a00 30%, #a06020 60%, #d4a050 80%, #7ab8d4 100%)",
-    heroPhoto: U("kmBg8ElP8Pc"),
+    heroPhoto: W("2/20/Taormina-Teatro_Greco01.JPG"),
     highlights: ["Teatro Greco-Romano", "Isola Bella", "Corso Umberto", "Vista sull'Etna"],
     desc: "La perla della Sicilia. Il teatro greco affacciato sul mare è uno dei panorami più fotografati del Mediterraneo.",
   },
@@ -66,7 +67,7 @@ const DAY_TRIPS = [
     time: "1h – 1h 30min",
     dir: "Sud-Ovest · A18 + SP92",
     photoBg: "linear-gradient(160deg, #080808 0%, #1a0800 20%, #3a0a00 40%, #8a2a00 60%, #c84a00 80%, #f07000 100%)",
-    heroPhoto: U("lcgM_NT1huI"),
+    heroPhoto: W("5/55/Catania-Etna-Sicilia-Italy-Castielli_CC0_HQ1.JPG"),
     highlights: ["Cratere Centrale (2.900 m)", "Piano Provenzana", "Grotte laviche", "Funivia"],
     desc: "Il vulcano attivo più alto d'Europa. D'estate si sale in jeep ai crateri, d'inverno si scia sui fianchi innevati.",
   },
@@ -76,7 +77,7 @@ const DAY_TRIPS = [
     time: "1h – 2h (aliscafo)",
     dir: "Nord · Porto di Milazzo",
     photoBg: "linear-gradient(160deg, #000a1a 0%, #001a4a 30%, #002a7a 55%, #0050b0 75%, #2a8ad4 90%, #70c8f0 100%)",
-    heroPhoto: U("OV3rAjhb8r0"),
+    heroPhoto: W("b/b9/Stromboli_und_Strombolicchio.JPG"),
     highlights: ["Stromboli (vulcano attivo)", "Vulcano (fanghi termali)", "Lipari", "Salina"],
     desc: "Arcipelago UNESCO. Stromboli erutta ogni 20 minuti — lo spettacolo notturno dalla barca è indimenticabile.",
   },
@@ -86,7 +87,7 @@ const DAY_TRIPS = [
     time: "1h 45min",
     dir: "Ovest · A20",
     photoBg: "linear-gradient(160deg, #000a10 0%, #002a40 30%, #005a7a 55%, #0090a8 75%, #40c0d8 88%, #c8f0f8 100%)",
-    heroPhoto: U("5iGcfoj21JQ"),
+    heroPhoto: W("8/87/Panorama_Cefalu_2023.jpg"),
     highlights: ["Duomo normanno UNESCO", "Rocca di Cefalù", "Centro medievale", "Spiagge sabbiose"],
     desc: "Il borgo medievale più fotografato della Sicilia. Il Duomo normanno e la Rocca dominano una baia cristallina.",
   },
@@ -96,7 +97,7 @@ const DAY_TRIPS = [
     time: "2h",
     dir: "Sud · A18",
     photoBg: "linear-gradient(160deg, #100800 0%, #3a1a00 25%, #7a4a00 50%, #c09040 70%, #7ab0d0 90%, #b0d8f0 100%)",
-    heroPhoto: U("rPhpce2xL-M"),
+    heroPhoto: W("3/31/Luftpanorama_von_Syrakus.jpg"),
     highlights: ["Ortigia (isola storica)", "Teatro Greco", "Parco Archeologico", "Fonte Aretusa"],
     desc: "Magna Grecia pura. Ortigia è un'isola storica percorribile a piedi, con il mercato del pesce e le chiese barocche.",
   },
@@ -106,7 +107,7 @@ const DAY_TRIPS = [
     time: "15 min",
     dir: "Nord · litoranea",
     photoBg: "linear-gradient(160deg, #0a3a2a 0%, #0a7e5a 40%, #3ab8a0 70%, #7ad4c8 100%)",
-    heroPhoto: U("zZy_vsGtkWc"),
+    heroPhoto: W("9/93/Torre_Faro_lighthouse_-_Capo_Peloro_-_Messina%2C_Italy_-_20_Oct._2010.jpg"),
     highlights: ["Due mari che si incontrano", "Laguna protetta", "Faro di Torre Faro", "Spiaggia dello Stretto"],
     desc: "La punta più nord-est della Sicilia, dove lo Ionio incontra il Tirreno. A 15 minuti da Messina — di casa.",
   },
@@ -161,7 +162,7 @@ export default function MessinaPage() {
             </p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 20 }}>
+          <div className="bb-grid-4">
             {[
               { dir: "NORD", label: "Isole Eolie", sub: "Stromboli, Vulcano, Lipari, Salina", photoBg: "linear-gradient(160deg, #000a1a 0%, #001a4a 50%, #0060c0 100%)", time: "1–2h in aliscafo" },
               { dir: "SUD", label: "Taormina & Etna", sub: "Costa ionica, Etna, Siracusa, Catania", photoBg: "linear-gradient(160deg, #080400 0%, #3a1500 50%, #c84a00 100%)", time: "45 min – 2h in auto" },
@@ -206,7 +207,7 @@ export default function MessinaPage() {
             </h2>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 28 }}>
+          <div className="bb-grid-2">
             {DAY_TRIPS.map((trip) => (
               <Link key={trip.dest} href={`/messina/${trip.slug}`} style={{ textDecoration: "none", borderRadius: "var(--r-xl)", overflow: "hidden", border: "1px solid var(--bb-line)", background: "var(--bb-white)", boxShadow: "0 2px 20px rgba(10,30,60,.05)", display: "block" }}>
                 {/* Photo header */}
@@ -261,7 +262,7 @@ export default function MessinaPage() {
               Messina, la città
             </h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
+          <div className="bb-grid-3">
             {CITY_HIGHLIGHTS.map((h) => (
               <div key={h.title} style={{ background: "var(--bb-white)", border: "1px solid var(--bb-line)", borderRadius: "var(--r-lg)", overflow: "hidden" }}>
                 {/* Photo area */}
@@ -289,7 +290,7 @@ export default function MessinaPage() {
       {/* PRACTICAL INFO */}
       <section style={{ padding: "72px 32px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64 }}>
+          <div className="bb-two-col-info">
             <div>
               <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: ".28em", textTransform: "uppercase", color: "var(--bb-blue)", marginBottom: 12 }}>
                 Come arrivare

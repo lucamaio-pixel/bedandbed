@@ -19,9 +19,8 @@ export interface Destination {
   gallery: { photo: string; caption: string; photoBg: string }[];
 }
 
-// Photo IDs sourced from Unsplash search results
-const U = (id: string, w = 1600) =>
-  `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=85`;
+const W = (path: string, w = 1280) =>
+  `https://upload.wikimedia.org/wikipedia/commons/thumb/${path}/${w}px-${path.split("/").pop()}`;
 
 export const DESTINATIONS: Destination[] = [
   {
@@ -33,7 +32,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "La perla della Sicilia",
     intro:
       "Taormina è una delle mete più suggestive del Mediterraneo. Adagiata su uno sperone roccioso a 200 metri sul mare, domina la costa ionica con una vista sull'Etna che toglie il fiato. Il Teatro Greco-Romano è il monumento più fotografato della Sicilia — e uno dei più belli del mondo.",
-    heroPhoto: U("kmBg8ElP8Pc"),
+    heroPhoto: W("2/20/Taormina-Teatro_Greco01.JPG"),
     photoBg: "linear-gradient(160deg, #1a0800 0%, #5a2a00 30%, #a06020 60%, #d4a050 80%, #7ab8d4 100%)",
     highlights: [
       { name: "Teatro Greco-Romano", desc: "Anfiteatro del III sec. a.C. con vista sull'Etna e sul mare. Ancora oggi sede di concerti e festival internazionali d'estate." },
@@ -50,9 +49,9 @@ export const DESTINATIONS: Destination[] = [
     ],
     bestSeason: "Aprile–Giugno e Settembre–Ottobre. L'estate è affollata ma il festival Taormina Arte vale ogni folla.",
     gallery: [
-      { photo: U("kmBg8ElP8Pc", 800), caption: "Teatro Greco-Romano dall'alto", photoBg: "linear-gradient(135deg, #8a4a00 0%, #d4a050 100%)" },
-      { photo: U("NWsqAW54bGc", 800), caption: "Isola Bella", photoBg: "linear-gradient(135deg, #006080 0%, #40b8d8 100%)" },
-      { photo: U("bK7i72qr2tg", 800), caption: "Centro storico", photoBg: "linear-gradient(135deg, #3a2a00 0%, #a06020 100%)" },
+      { photo: W("2/20/Taormina-Teatro_Greco01.JPG", 800), caption: "Teatro Greco-Romano", photoBg: "linear-gradient(135deg, #8a4a00 0%, #d4a050 100%)" },
+      { photo: W("1/17/Isola_Bella_%28Taormina%29.jpg", 800), caption: "Isola Bella", photoBg: "linear-gradient(135deg, #006080 0%, #40b8d8 100%)" },
+      { photo: W("e/ed/Taormina_BW_2012-10-05_10-27-01.jpg", 800), caption: "Centro storico", photoBg: "linear-gradient(135deg, #3a2a00 0%, #a06020 100%)" },
     ],
   },
   {
@@ -64,7 +63,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Il gigante di fuoco",
     intro:
       "L'Etna è il vulcano attivo più alto d'Europa — 3.357 metri — e uno dei più attivi al mondo. Il paesaggio lavico è lunare, i crateri fumano, e quando erutta di notte il cielo si tinge di arancio. Un'esperienza che ridefinisce la scala delle cose.",
-    heroPhoto: U("lcgM_NT1huI"),
+    heroPhoto: W("5/55/Catania-Etna-Sicilia-Italy-Castielli_CC0_HQ1.JPG"),
     photoBg: "linear-gradient(160deg, #080808 0%, #1a0800 20%, #3a0a00 40%, #8a2a00 60%, #c84a00 80%, #f07000 100%)",
     highlights: [
       { name: "Crateri Sommitali", desc: "A 2.900–3.357 m di quota, raggiungibili con funivia + jeep 4x4 o a piedi da Piano del Lago. Le guide vulcanologiche sono obbligatorie oltre i 2.900 m." },
@@ -81,9 +80,9 @@ export const DESTINATIONS: Destination[] = [
     ],
     bestSeason: "Maggio–Ottobre per i crateri. Dicembre–Marzo per sciare a Piano Provenzana.",
     gallery: [
-      { photo: U("lcgM_NT1huI", 800), caption: "Eruzione notturna", photoBg: "linear-gradient(135deg, #1a0400 0%, #c84a00 100%)" },
-      { photo: U("Lv96SDyk6HU", 800), caption: "Paesaggio sommitale", photoBg: "linear-gradient(135deg, #2a1000 0%, #8a4a00 100%)" },
-      { photo: U("OV3rAjhb8r0", 800), caption: "Lava e fumo", photoBg: "linear-gradient(135deg, #0a0a0a 0%, #3a1a00 100%)" },
+      { photo: W("5/55/Catania-Etna-Sicilia-Italy-Castielli_CC0_HQ1.JPG", 800), caption: "Etna dalla costa", photoBg: "linear-gradient(135deg, #1a0400 0%, #c84a00 100%)" },
+      { photo: W("d/d1/Mount_Etna_eruption_seen_from_the_International_Space_Station.jpg", 800), caption: "Eruzione dallo spazio", photoBg: "linear-gradient(135deg, #2a1000 0%, #8a4a00 100%)" },
+      { photo: W("b/be/Etna_and_Catania.jpg", 800), caption: "Etna e Catania", photoBg: "linear-gradient(135deg, #0a0a0a 0%, #3a1a00 100%)" },
     ],
   },
   {
@@ -95,7 +94,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Sette isole, un paradiso",
     intro:
       "Le Isole Eolie sono Patrimonio UNESCO e uno degli arcipelaghi più belli del Mediterraneo. Sette isole, ognuna con un carattere diverso: Stromboli erutta ogni 20 minuti, Vulcano ha i fanghi termali, Lipari è la più vivace, Salina è verde e tranquilla.",
-    heroPhoto: U("OV3rAjhb8r0"),
+    heroPhoto: W("b/b9/Stromboli_und_Strombolicchio.JPG"),
     photoBg: "linear-gradient(160deg, #000a1a 0%, #001a4a 30%, #002a7a 55%, #0050b0 75%, #2a8ad4 90%, #70c8f0 100%)",
     highlights: [
       { name: "Stromboli", desc: "Il vulcano che erutta ogni 20 minuti. L'escursione notturna in cima (920 m) per vedere la Sciara del Fuoco è una delle esperienze più indimenticabili d'Italia. Guida obbligatoria." },
@@ -112,9 +111,9 @@ export const DESTINATIONS: Destination[] = [
     ],
     bestSeason: "Giugno e Settembre — mare caldo, meno folla, prezzi migliori.",
     gallery: [
-      { photo: U("OV3rAjhb8r0", 800), caption: "Stromboli in eruzione", photoBg: "linear-gradient(135deg, #001840 0%, #0060b0 100%)" },
-      { photo: U("49hdE6Ke5WE", 800), caption: "Sciara del Fuoco di notte", photoBg: "linear-gradient(135deg, #000820 0%, #3030a0 100%)" },
-      { photo: U("Q_8GoO5CfyU", 800), caption: "Alicudi, Isole Eolie", photoBg: "linear-gradient(135deg, #002850 0%, #40a8e0 100%)" },
+      { photo: W("b/b9/Stromboli_und_Strombolicchio.JPG", 800), caption: "Stromboli e Strombolicchio", photoBg: "linear-gradient(135deg, #001840 0%, #0060b0 100%)" },
+      { photo: W("6/6b/Stromboli_sciara_del_fuoco.jpg", 800), caption: "Sciara del Fuoco", photoBg: "linear-gradient(135deg, #000820 0%, #3030a0 100%)" },
+      { photo: W("0/0c/Lipari_view.jpg", 800), caption: "Lipari", photoBg: "linear-gradient(135deg, #002850 0%, #40a8e0 100%)" },
     ],
   },
   {
@@ -126,7 +125,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Il borgo medievale sul mare",
     intro:
       "Cefalù è il borgo più fotografato della Sicilia. Il Duomo normanno UNESCO si innalza sotto una Rocca imponente che domina un mare turchese impossibile. Il centro medievale è percorribile a piedi — ogni vicolo nasconde una sorpresa. Le spiagge di sabbia fine sono tra le migliori della Sicilia.",
-    heroPhoto: U("5iGcfoj21JQ"),
+    heroPhoto: W("8/87/Panorama_Cefalu_2023.jpg"),
     photoBg: "linear-gradient(160deg, #000a10 0%, #002a40 30%, #005a7a 55%, #0090a8 75%, #40c0d8 88%, #c8f0f8 100%)",
     highlights: [
       { name: "Duomo normanno", desc: "Costruito dai Normanni nel 1131, Patrimonio UNESCO. I mosaici dorati del Cristo Pantocratore sono tra i più grandi d'Europa." },
@@ -142,9 +141,9 @@ export const DESTINATIONS: Destination[] = [
     ],
     bestSeason: "Maggio–Giugno e Settembre. In luglio–agosto il mare giustifica la folla.",
     gallery: [
-      { photo: U("5iGcfoj21JQ", 800), caption: "Spiaggia e Rocca", photoBg: "linear-gradient(135deg, #003050 0%, #0090c0 100%)" },
-      { photo: U("fxU4SNlJoV0", 800), caption: "Costa tirrenica", photoBg: "linear-gradient(135deg, #004060 0%, #40c0e0 100%)" },
-      { photo: U("RmKuptjdM88", 800), caption: "Borgo dall'alto", photoBg: "linear-gradient(135deg, #2a1800 0%, #a07040 100%)" },
+      { photo: W("8/87/Panorama_Cefalu_2023.jpg", 800), caption: "Cefalù panorama", photoBg: "linear-gradient(135deg, #003050 0%, #0090c0 100%)" },
+      { photo: W("8/88/Cathedral_of_Cefalu_-_facade.jpg", 800), caption: "Duomo normanno", photoBg: "linear-gradient(135deg, #2a1800 0%, #a07040 100%)" },
+      { photo: W("4/45/Cefalu_beach.jpg", 800), caption: "Spiaggia di Cefalù", photoBg: "linear-gradient(135deg, #004060 0%, #40c0e0 100%)" },
     ],
   },
   {
@@ -156,7 +155,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Magna Grecia sull'acqua",
     intro:
       "Siracusa fu la città più potente del mondo greco-antico, rivale di Atene e Cartagine. Oggi è Patrimonio UNESCO. Ortigia, l'isola storica collegata da un ponte, è un dedalo di vicoli barocchi, mercati di pesce e chiese costruite su templi greci.",
-    heroPhoto: U("rPhpce2xL-M"),
+    heroPhoto: W("3/31/Luftpanorama_von_Syrakus.jpg"),
     photoBg: "linear-gradient(160deg, #100800 0%, #3a1a00 25%, #7a4a00 50%, #c09040 70%, #7ab0d0 90%, #b0d8f0 100%)",
     highlights: [
       { name: "Ortigia", desc: "L'isola storica — 1 km × 600 m, percorribile a piedi. Piazza del Duomo è una delle più belle d'Italia. Il Duomo è costruito attorno alle colonne di un tempio dorico del V sec. a.C." },
@@ -172,9 +171,9 @@ export const DESTINATIONS: Destination[] = [
     ],
     bestSeason: "Aprile–Giugno e Settembre–Ottobre. L'estate è calda ma il festival vale il viaggio.",
     gallery: [
-      { photo: U("rPhpce2xL-M", 800), caption: "Duomo di Siracusa", photoBg: "linear-gradient(135deg, #002040 0%, #0060a0 100%)" },
-      { photo: U("F9ZBKO-ctc4", 800), caption: "Ortigia barocca", photoBg: "linear-gradient(135deg, #2a1800 0%, #906040 100%)" },
-      { photo: U("zZy_vsGtkWc", 800), caption: "Costa ionica", photoBg: "linear-gradient(135deg, #001830 0%, #4080c0 100%)" },
+      { photo: W("3/31/Luftpanorama_von_Syrakus.jpg", 800), caption: "Siracusa dall'alto", photoBg: "linear-gradient(135deg, #002040 0%, #0060a0 100%)" },
+      { photo: W("6/62/Teatro_greco_di_Siracusa.jpg", 800), caption: "Teatro Greco", photoBg: "linear-gradient(135deg, #2a1800 0%, #906040 100%)" },
+      { photo: W("0/09/Ortigia%2C_duomo%2C_facciata_01.JPG", 800), caption: "Duomo di Ortigia", photoBg: "linear-gradient(135deg, #001830 0%, #4080c0 100%)" },
     ],
   },
   {
@@ -186,7 +185,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Dove due mari si incontrano",
     intro:
       "Capo Peloro è la punta più nord-orientale della Sicilia — il punto in cui il Mar Ionio e il Mar Tirreno si incontrano visibilmente, con correnti e colori diversi. La laguna è una riserva naturale protetta, con fenicotteri e aironi. Il faro ottocentesco domina lo Stretto. A 15 minuti da Messina.",
-    heroPhoto: U("zZy_vsGtkWc"),
+    heroPhoto: W("9/93/Torre_Faro_lighthouse_-_Capo_Peloro_-_Messina%2C_Italy_-_20_Oct._2010.jpg"),
     photoBg: "linear-gradient(160deg, #0a3a2a 0%, #0a7e5a 40%, #3ab8a0 70%, #7ad4c8 100%)",
     highlights: [
       { name: "Lo Stretto dalla punta", desc: "Dal promontorio si vedono contemporaneamente la Calabria (a 3,1 km), il faro, la laguna e i due mari con colorazioni diverse. Il tramonto da qui è uno spettacolo naturale rarissimo." },
@@ -202,9 +201,9 @@ export const DESTINATIONS: Destination[] = [
     ],
     bestSeason: "Tutto l'anno. D'estate per il mare, in inverno per l'atmosfera selvaggia. Il tramonto vale qualsiasi stagione.",
     gallery: [
-      { photo: U("zZy_vsGtkWc", 800), caption: "Lo Stretto di Messina", photoBg: "linear-gradient(135deg, #003830 0%, #40b890 100%)" },
-      { photo: U("eyFcN6PQD70", 800), caption: "Faro di Capo Peloro", photoBg: "linear-gradient(135deg, #002820 0%, #308870 100%)" },
-      { photo: U("Mum_3Kw7HgY", 800), caption: "Costa dello Stretto", photoBg: "linear-gradient(135deg, #001830 0%, #2060a0 100%)" },
+      { photo: W("9/93/Torre_Faro_lighthouse_-_Capo_Peloro_-_Messina%2C_Italy_-_20_Oct._2010.jpg", 800), caption: "Faro di Torre Faro", photoBg: "linear-gradient(135deg, #003830 0%, #40b890 100%)" },
+      { photo: W("e/e2/Laghi_di_Ganzirri_-_Messina.jpg", 800), caption: "Laghi di Ganzirri", photoBg: "linear-gradient(135deg, #002820 0%, #308870 100%)" },
+      { photo: W("d/d6/Sicilia_Messina1_tango7174.jpg", 800), caption: "Costa dello Stretto", photoBg: "linear-gradient(135deg, #001830 0%, #2060a0 100%)" },
     ],
   },
 ];

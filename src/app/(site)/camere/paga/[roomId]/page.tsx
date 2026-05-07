@@ -52,7 +52,7 @@ export default async function PagaPage({ params, searchParams }: Props) {
         </div>
       </div>
 
-      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "40px 32px", display: "grid", gridTemplateColumns: "1fr 360px", gap: 40, alignItems: "start" }}>
+      <div className="bb-sidebar-grid bb-mobile-pad" style={{ maxWidth: 1200, margin: "0 auto", padding: "40px 32px" }}>
 
         {/* ─── PAYMENT FORM ─── */}
         <div>

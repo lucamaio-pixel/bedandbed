@@ -70,6 +70,122 @@
   --radius-pill: var(--r-pill);
 }
 
+/* ─── Responsive layout utilities ─── */
+.bb-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.bb-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.bb-two-col-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+}
+.bb-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+.bb-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.bb-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.bb-sidebar-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 64px;
+  align-items: start;
+}
+.bb-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.bb-search-bar {
+  display: grid;
+  grid-template-columns: 1.4fr 1.6fr 1fr 1fr auto;
+  overflow: hidden;
+}
+
+/* ─── Global mobile padding reduction ─── */
+@media (max-width: 768px) {
+  section, .bb-section {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .bb-hero-grid,
+  .bb-two-col,
+  .bb-two-col-info,
+  .bb-grid-2,
+  .bb-grid-3,
+  .bb-grid-4,
+  .bb-sidebar-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .bb-gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .bb-gallery-grid > *:first-child {
+    grid-column: span 2;
+  }
+
+  .bb-search-bar {
+    grid-template-columns: 1fr;
+    border-radius: var(--r-xl);
+  }
+  .bb-search-bar > * {
+    border-right: none !important;
+    border-bottom: 1px solid var(--bb-line) !important;
+  }
+  .bb-search-bar > *:last-child {
+    border-bottom: none !important;
+    border-radius: 0 0 var(--r-xl) var(--r-xl);
+  }
+
+  .bb-mobile-hide { display: none !important; }
+  .bb-mobile-stack { flex-direction: column !important; }
+  .bb-mobile-pad { padding-left: 20px !important; padding-right: 20px !important; }
+  .bb-mobile-full { width: 100% !important; }
+}
+
+/* Room card: photo left + content right → stacked on mobile */
+.bb-room-card {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+}
+
+@media (max-width: 768px) {
+  .bb-room-card {
+    grid-template-columns: 1fr;
+  }
+  .bb-room-card > *:first-child {
+    min-height: 180px !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .bb-desktop-hide { display: none !important; }
+}
+
 /* ─── Base reset ─── */
 *, *::before, *::after { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }

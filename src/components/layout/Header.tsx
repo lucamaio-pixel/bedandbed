@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import Link from "next/link";
 import { LogoHorizontal } from "@/components/logo";
 import { Button } from "@/components/ui";
@@ -13,6 +14,8 @@ const NAV = [
 ];
 
 export function Header() {
+  const [open, setOpen] = useState(false);
+
   return (
     <header
       style={{
@@ -23,42 +26,35 @@ export function Header() {
         zIndex: 50,
       }}
     >
+      {/* ─── Main bar ─── */}
       <div
         style={{
           maxWidth: 1200,
           margin: "0 auto",
-          padding: "0 32px",
-          height: 72,
+          padding: "0 20px",
+          height: 64,
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          gap: 32,
+          gap: 24,
         }}
       >
-        <Link href="/" style={{ textDecoration: "none", flexShrink: 0 }}>
-          <LogoHorizontal size={44} variant="light" />
+        <Link href="/" style={{ textDecoration: "none", flexShrink: 0 }} onClick={() => setOpen(false)}>
+          <LogoHorizontal size={40} variant="light" />
         </Link>
 
-        <nav
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 8,
-            flex: 1,
-            justifyContent: "center",
-          }}
-        >
+        {/* Desktop nav */}
+        <nav className="bb-mobile-hide" style={{ display: "flex", alignItems: "center", gap: 4, flex: 1, justifyContent: "center" }}>
           {NAV.map(({ label, href }) => (
             <Link
               key={href}
               href={href}
               style={{
-                fontFamily: "var(--bb-sans)",
                 fontSize: 14,
                 fontWeight: 500,
                 color: "var(--bb-ink-soft)",
                 textDecoration: "none",
-                padding: "6px 12px",
+                padding: "6px 11px",
                 borderRadius: "var(--r-pill)",
                 transition: "color .12s, background .12s",
               }}
@@ -76,22 +72,71 @@ export function Header() {
           ))}
         </nav>
 
-        <div style={{ display: "flex", alignItems: "center", gap: 12, flexShrink: 0 }}>
-          <span
-            style={{
-              fontSize: 13,
-              fontWeight: 600,
-              color: "var(--bb-ink-mute)",
-              letterSpacing: ".04em",
-            }}
-          >
-            IT
-          </span>
-          <Button variant="primary" size="sm" asChild>
+        <div style={{ display: "flex", alignItems: "center", gap: 10, flexShrink: 0 }}>
+          {/* Desktop CTA */}
+          <Button className="bb-mobile-hide" variant="primary" size="sm" asChild>
             <a href="/camere">Prenota ora</a>
           </Button>
+
+          {/* Mobile hamburger */}
+          <button
+            className="bb-desktop-hide"
+            onClick={() => setOpen((v) => !v)}
+            aria-label={open ? "Chiudi menu" : "Apri menu"}
+            style={{
+              background: "none",
+              border: "1px solid var(--bb-line)",
+              borderRadius: "var(--r-md)",
+              width: 40,
+              height: 40,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              cursor: "pointer",
+              color: "var(--bb-blue-ink)",
+              fontSize: 18,
+            }}
+          >
+            {open ? "✕" : "☰"}
+          </button>
         </div>
       </div>
+
+      {/* ─── Mobile menu drawer ─── */}
+      {open && (
+        <div
+          className="bb-desktop-hide"
+          style={{
+            borderTop: "1px solid var(--bb-line)",
+            background: "var(--bb-cream)",
+            padding: "16px 20px 24px",
+          }}
+        >
+          {NAV.map(({ label, href }) => (
+            <Link
+              key={href}
+              href={href}
+              onClick={() => setOpen(false)}
+              style={{
+                display: "block",
+                fontSize: 16,
+                fontWeight: 500,
+                color: "var(--bb-blue-ink)",
+                textDecoration: "none",
+                padding: "13px 0",
+                borderBottom: "1px solid var(--bb-line)",
+              }}
+            >
+              {label}
+            </Link>
+          ))}
+          <div style={{ marginTop: 20 }}>
+            <Button variant="primary" size="lg" asChild style={{ width: "100%" }}>
+              <a href="/camere" onClick={() => setOpen(false)}>Prenota ora</a>
+            </Button>
+          </div>
+        </div>
+      )}
     </header>
   );
 }

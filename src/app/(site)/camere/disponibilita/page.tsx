@@ -44,7 +44,7 @@ export default async function DisponibilitaPage({ searchParams }: Props) {
         </div>
       </div>
 
-      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "40px 32px", display: "grid", gridTemplateColumns: "1fr 320px", gap: 40, alignItems: "start" }}>
+      <div className="bb-sidebar-grid bb-mobile-pad" style={{ maxWidth: 1200, margin: "0 auto", padding: "40px 32px" }}>
 
         {/* ─── RISULTATI ─── */}
         <div>
@@ -75,7 +75,7 @@ export default async function DisponibilitaPage({ searchParams }: Props) {
           ) : (
             <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
               {rooms.map((room) => (
-                <article key={room.id} style={{ background: "var(--bb-white)", border: "1px solid var(--bb-line)", borderRadius: "var(--r-lg)", overflow: "hidden", display: "grid", gridTemplateColumns: "280px 1fr" }}>
+                <article key={room.id} className="bb-room-card" style={{ background: "var(--bb-white)", border: "1px solid var(--bb-line)", borderRadius: "var(--r-lg)", overflow: "hidden", display: "grid", gridTemplateColumns: "280px 1fr" }}>
                   {/* foto */}
                   <div style={{ background: room.photoBg, position: "relative", minHeight: 200 }}>
                     <div style={{ position: "absolute", inset: 0, background: "repeating-linear-gradient(-45deg, rgba(255,255,255,.04) 0 10px, transparent 10px 20px)" }} />

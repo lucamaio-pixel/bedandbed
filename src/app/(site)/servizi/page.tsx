@@ -81,7 +81,7 @@ export default function ServiziPage() {
 
       {/* SERVICES GRID */}
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "64px 32px" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24, marginBottom: 64 }}>
+        <div className="bb-grid-3" style={{ marginBottom: 64 }}>
           {SERVICES.map((s) => (
             <div
               key={s.title}
@@ -104,7 +104,7 @@ export default function ServiziPage() {
         </div>
 
         {/* Long stay section */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center", background: "var(--bb-blue-ink)", borderRadius: "var(--r-xl)", padding: "56px 64px" }}>
+        <div className="bb-two-col" style={{ background: "var(--bb-blue-ink)", borderRadius: "var(--r-xl)", padding: "56px 40px" }}>
           <div>
             <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: ".28em", textTransform: "uppercase", color: "var(--bb-yellow)", marginBottom: 12 }}>
               Soggiorni lunghi

@@ -56,14 +56,12 @@ export function HomeSearchBar() {
 
   return (
     <div
+      className="bb-search-bar"
       style={{
         background: "var(--bb-white)",
         border: "1px solid var(--bb-line)",
         borderRadius: "var(--r-xl)",
         boxShadow: "0 4px 32px rgba(10,30,60,.10)",
-        display: "grid",
-        gridTemplateColumns: "1.4fr 1.6fr 1fr 1fr auto",
-        overflow: "hidden",
       }}
     >
       {/* STRUTTURA */}

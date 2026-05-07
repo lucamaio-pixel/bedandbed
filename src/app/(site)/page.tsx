@@ -19,7 +19,7 @@ export default function HomePage() {
     <div style={{ background: "var(--bb-cream)" }}>
 
       {/* ─── HERO SPLIT ─── */}
-      <section style={{ maxWidth: 1200, margin: "0 auto", padding: "72px 32px 0", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }}>
+      <section className="bb-hero-grid bb-mobile-pad" style={{ maxWidth: 1200, margin: "0 auto", padding: "64px 32px 0" }}>
 
         {/* LEFT — copy */}
         <div>
@@ -108,7 +108,7 @@ export default function HomePage() {
       </section>
 
       {/* ─── SEARCH BAR ─── */}
-      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "24px 32px 0" }}>
+      <div className="bb-mobile-pad" style={{ maxWidth: 1200, margin: "0 auto", padding: "24px 32px 0" }}>
         <HomeSearchBar />
       </div>
 
@@ -130,7 +130,7 @@ export default function HomePage() {
       </div>
 
       {/* ─── LE TRE STRUTTURE ─── */}
-      <section style={{ padding: "72px 32px", maxWidth: 1200, margin: "0 auto" }}>
+      <section className="bb-mobile-pad" style={{ padding: "64px 32px", maxWidth: 1200, margin: "0 auto" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 40, gap: 24, flexWrap: "wrap" }}>
           <div>
             <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: ".28em", textTransform: "uppercase", color: "var(--bb-blue)", marginBottom: 10 }}>
@@ -145,7 +145,7 @@ export default function HomePage() {
           </Button>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
+        <div className="bb-grid-3">
           {PROPERTIES.map((s) => (
             <StructureCard
               key={s.slug}
@@ -164,8 +164,8 @@ export default function HomePage() {
       </section>
 
       {/* ─── COSA SIAMO ─── */}
-      <section style={{ background: "var(--bb-white)", borderTop: "1px solid var(--bb-line)", borderBottom: "1px solid var(--bb-line)", padding: "72px 32px" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
+      <section className="bb-mobile-pad" style={{ background: "var(--bb-white)", borderTop: "1px solid var(--bb-line)", borderBottom: "1px solid var(--bb-line)", padding: "64px 32px" }}>
+        <div className="bb-two-col bb-mobile-pad" style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div>
             <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: ".28em", textTransform: "uppercase", color: "var(--bb-blue)", marginBottom: 12 }}>
               Cosa siamo — e cosa no
