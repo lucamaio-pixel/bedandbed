@@ -6,8 +6,9 @@ import { Button } from "@/components/ui";
 const NAV = [
   { label: "Le strutture", href: "/strutture" },
   { label: "Camere", href: "/camere" },
-  { label: "Servizi", href: "/servizi" },
   { label: "Messina", href: "/messina" },
+  { label: "Galleria", href: "/galleria" },
+  { label: "FAQ", href: "/faq" },
   { label: "Contatti", href: "/contatti" },
 ];
 
