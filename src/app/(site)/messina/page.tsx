@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui";
+import { DESTINATIONS } from "@/lib/destinations";
 
 const CITY_HIGHLIGHTS = [
   {
@@ -46,66 +47,68 @@ const CITY_HIGHLIGHTS = [
   },
 ];
 
+const U = (id: string) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=900&q=85`;
+
 const DAY_TRIPS = [
   {
+    slug: "taormina",
     dest: "Taormina",
     time: "45 min",
     dir: "Sud · A18",
-    color: "#8C4A00",
     photoBg: "linear-gradient(160deg, #1a0800 0%, #5a2a00 30%, #a06020 60%, #d4a050 80%, #7ab8d4 100%)",
-    icon: "🏛️",
+    heroPhoto: U("kmBg8ElP8Pc"),
     highlights: ["Teatro Greco-Romano", "Isola Bella", "Corso Umberto", "Vista sull'Etna"],
     desc: "La perla della Sicilia. Il teatro greco affacciato sul mare è uno dei panorami più fotografati del Mediterraneo.",
   },
   {
+    slug: "etna",
     dest: "Etna",
     time: "1h – 1h 30min",
     dir: "Sud-Ovest · A18 + SP92",
-    color: "#5a1a00",
     photoBg: "linear-gradient(160deg, #080808 0%, #1a0800 20%, #3a0a00 40%, #8a2a00 60%, #c84a00 80%, #f07000 100%)",
-    icon: "🌋",
+    heroPhoto: U("lcgM_NT1huI"),
     highlights: ["Cratere Centrale (2.900 m)", "Piano Provenzana", "Grotte laviche", "Funivia"],
     desc: "Il vulcano attivo più alto d'Europa. D'estate si sale in jeep ai crateri, d'inverno si scia sui fianchi innevati.",
   },
   {
+    slug: "eolie",
     dest: "Isole Eolie",
     time: "1h – 2h (aliscafo)",
     dir: "Nord · Porto di Milazzo",
-    color: "#003a6a",
     photoBg: "linear-gradient(160deg, #000a1a 0%, #001a4a 30%, #002a7a 55%, #0050b0 75%, #2a8ad4 90%, #70c8f0 100%)",
-    icon: "🏝️",
+    heroPhoto: U("OV3rAjhb8r0"),
     highlights: ["Stromboli (vulcano attivo)", "Vulcano (fanghi termali)", "Lipari", "Salina"],
     desc: "Arcipelago UNESCO. Stromboli erutta ogni 20 minuti — lo spettacolo notturno dalla barca è indimenticabile.",
   },
   {
+    slug: "cefalu",
     dest: "Cefalù",
     time: "1h 45min",
     dir: "Ovest · A20",
-    color: "#00506a",
     photoBg: "linear-gradient(160deg, #000a10 0%, #002a40 30%, #005a7a 55%, #0090a8 75%, #40c0d8 88%, #c8f0f8 100%)",
-    icon: "🏖️",
+    heroPhoto: U("5iGcfoj21JQ"),
     highlights: ["Duomo normanno UNESCO", "Rocca di Cefalù", "Centro medievale", "Spiagge sabbiose"],
     desc: "Il borgo medievale più fotografato della Sicilia. Il Duomo normanno e la Rocca dominano una baia cristallina.",
   },
   {
+    slug: "siracusa",
     dest: "Siracusa",
     time: "2h",
     dir: "Sud · A18",
-    color: "#5a3a00",
     photoBg: "linear-gradient(160deg, #100800 0%, #3a1a00 25%, #7a4a00 50%, #c09040 70%, #7ab0d0 90%, #b0d8f0 100%)",
-    icon: "🏺",
+    heroPhoto: U("rPhpce2xL-M"),
     highlights: ["Ortigia (isola storica)", "Teatro Greco", "Parco Archeologico", "Fonte Aretusa"],
     desc: "Magna Grecia pura. Ortigia è un'isola storica percorribile a piedi, con il mercato del pesce e le chiese barocche.",
   },
   {
-    dest: "Costa Tirrenica",
-    time: "30–60 min",
-    dir: "Ovest · A20",
-    color: "#004a3a",
-    photoBg: "linear-gradient(160deg, #000a08 0%, #001a14 25%, #004a38 50%, #00806a 70%, #40b898 85%, #90e0d0 100%)",
-    icon: "🏊",
-    highlights: ["Milazzo", "Capo Milazzo", "Spiagge di Oliveri", "Fondali di Tindari"],
-    desc: "La costa tirrenica siciliana è diversa dalla ionica: spiagge sabbiose più lunghe, acque calme e borghi di pescatori.",
+    slug: "capo-peloro",
+    dest: "Capo Peloro",
+    time: "15 min",
+    dir: "Nord · litoranea",
+    photoBg: "linear-gradient(160deg, #0a3a2a 0%, #0a7e5a 40%, #3ab8a0 70%, #7ad4c8 100%)",
+    heroPhoto: U("zZy_vsGtkWc"),
+    highlights: ["Due mari che si incontrano", "Laguna protetta", "Faro di Torre Faro", "Spiaggia dello Stretto"],
+    desc: "La punta più nord-est della Sicilia, dove lo Ionio incontra il Tirreno. A 15 minuti da Messina — di casa.",
   },
 ];
 
@@ -205,9 +208,9 @@ export default function MessinaPage() {
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 28 }}>
             {DAY_TRIPS.map((trip) => (
-              <div key={trip.dest} style={{ borderRadius: "var(--r-xl)", overflow: "hidden", border: "1px solid var(--bb-line)", background: "var(--bb-white)", boxShadow: "0 2px 20px rgba(10,30,60,.05)" }}>
+              <Link key={trip.dest} href={`/messina/${trip.slug}`} style={{ textDecoration: "none", borderRadius: "var(--r-xl)", overflow: "hidden", border: "1px solid var(--bb-line)", background: "var(--bb-white)", boxShadow: "0 2px 20px rgba(10,30,60,.05)", display: "block" }}>
                 {/* Photo header */}
-                <div style={{ height: 220, background: trip.photoBg, position: "relative", display: "flex", alignItems: "flex-end", padding: "24px 28px" }}>
+                <div style={{ height: 220, background: `url('${trip.heroPhoto}') center/cover no-repeat, ${trip.photoBg}`, position: "relative", display: "flex", alignItems: "flex-end", padding: "24px 28px" }}>
                   <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,.65) 0%, rgba(0,0,0,.1) 60%, transparent 100%)" }} />
                   <div style={{ position: "relative", zIndex: 1, width: "100%" }}>
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
@@ -237,8 +240,11 @@ export default function MessinaPage() {
                       </span>
                     ))}
                   </div>
+                  <div style={{ fontSize: 12, fontWeight: 600, color: "var(--bb-blue)", marginTop: 14 }}>
+                    Scopri {trip.dest} →
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
