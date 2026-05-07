@@ -212,7 +212,6 @@ export default function MessinaPage() {
                   <div style={{ position: "relative", zIndex: 1, width: "100%" }}>
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
                       <div>
-                        <div style={{ fontSize: 28, marginBottom: 6 }}>{trip.icon}</div>
                         <div style={{ fontFamily: "var(--bb-serif)", fontWeight: 700, fontSize: 28, color: "white", letterSpacing: "-0.02em", lineHeight: 1 }}>
                           {trip.dest}
                         </div>
@@ -262,9 +261,8 @@ export default function MessinaPage() {
                 {/* Photo area */}
                 <div style={{ height: 160, background: h.photoBg, position: "relative", display: "flex", alignItems: "flex-end", padding: "14px 20px" }}>
                   <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,.55) 0%, transparent 60%)" }} />
-                  <div style={{ position: "relative", zIndex: 1, display: "flex", alignItems: "center", gap: 8 }}>
-                    <span style={{ fontSize: 20 }}>{h.icon}</span>
-                    <span style={{ fontSize: 11, fontWeight: 600, color: "rgba(255,255,255,.8)", letterSpacing: ".06em" }}>{h.photoLabel}</span>
+                  <div style={{ position: "relative", zIndex: 1 }}>
+                    <span style={{ fontSize: 11, fontWeight: 600, color: "rgba(255,255,255,.8)", letterSpacing: ".06em", textTransform: "uppercase" }}>{h.photoLabel}</span>
                   </div>
                 </div>
                 {/* Content */}

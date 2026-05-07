@@ -88,7 +88,7 @@ export function Header() {
             IT
           </span>
           <Button variant="primary" size="sm" asChild>
-            <a href="/camere">Prenota</a>
+            <a href="/camere">Prenota ora</a>
           </Button>
         </div>
       </div>
