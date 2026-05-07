@@ -58,7 +58,7 @@ export function LogoCircle({
           gap: size * 0.012,
         }}
       >
-        <Key size={size * 0.18} />
+        <Key size={size * 0.36} />
 
         {/* wordmark */}
         <div
