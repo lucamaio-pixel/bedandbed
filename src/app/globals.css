@@ -119,12 +119,29 @@
   grid-template-columns: 1.4fr 1.6fr 1fr 1fr auto;
   overflow: hidden;
 }
+.bb-footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+}
 
 /* ─── Global mobile padding reduction ─── */
 @media (max-width: 768px) {
   section, .bb-section {
     padding-left: 20px !important;
     padding-right: 20px !important;
+  }
+
+  .bb-footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  /* Footer bottom bar */
+  .bb-footer-bottom {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
   }
 }
 
@@ -189,6 +206,10 @@
 /* ─── Base reset ─── */
 *, *::before, *::after { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
+
+/* Prevent horizontal overflow on mobile */
+html { overflow-x: hidden; }
+body { overflow-x: hidden; max-width: 100%; }
 
 body {
   font-family: var(--font-inter), -apple-system, system-ui, sans-serif;

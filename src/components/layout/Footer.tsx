@@ -45,13 +45,11 @@ export function Footer() {
   return (
     <footer style={{ background: "var(--bb-blue-ink)", color: "var(--bb-cream)" }}>
       <div
+        className="bb-footer-grid"
         style={{
           maxWidth: 1200,
           margin: "0 auto",
           padding: "64px 32px 48px",
-          display: "grid",
-          gridTemplateColumns: "2fr 1fr 1fr 1fr",
-          gap: 48,
         }}
       >
         {/* brand column */}
@@ -111,6 +109,7 @@ export function Footer() {
       </div>
 
       <div
+        className="bb-footer-bottom"
         style={{
           borderTop: "1px solid rgba(251,247,238,.1)",
           padding: "20px 32px",
