@@ -125,7 +125,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Il borgo medievale sul mare",
     intro:
       "Cefalù è il borgo più fotografato della Sicilia. Il Duomo normanno UNESCO si innalza sotto una Rocca imponente che domina un mare turchese impossibile. Il centro medievale è percorribile a piedi — ogni vicolo nasconde una sorpresa. Le spiagge di sabbia fine sono tra le migliori della Sicilia.",
-    heroPhoto: W("8/87/Panorama_Cefalu_2023.jpg"),
+    heroPhoto: W("d/d3/Panorama_view_of_Cefalu,_Sicily,_Italy_(12755655315).jpg"),
     photoBg: "linear-gradient(160deg, #000a10 0%, #002a40 30%, #005a7a 55%, #0090a8 75%, #40c0d8 88%, #c8f0f8 100%)",
     highlights: [
       { name: "Duomo normanno", desc: "Costruito dai Normanni nel 1131, Patrimonio UNESCO. I mosaici dorati del Cristo Pantocratore sono tra i più grandi d'Europa." },
@@ -141,7 +141,7 @@ export const DESTINATIONS: Destination[] = [
     ],
     bestSeason: "Maggio–Giugno e Settembre. In luglio–agosto il mare giustifica la folla.",
     gallery: [
-      { photo: W("8/87/Panorama_Cefalu_2023.jpg", 800), caption: "Cefalù panorama", photoBg: "linear-gradient(135deg, #003050 0%, #0090c0 100%)" },
+      { photo: W("d/d3/Panorama_view_of_Cefalu,_Sicily,_Italy_(12755655315).jpg", 800), caption: "Cefalù panorama", photoBg: "linear-gradient(135deg, #003050 0%, #0090c0 100%)" },
       { photo: W("8/88/Cathedral_of_Cefalu_-_facade.jpg", 800), caption: "Duomo normanno", photoBg: "linear-gradient(135deg, #2a1800 0%, #a07040 100%)" },
       { photo: W("4/45/Cefalu_beach.jpg", 800), caption: "Spiaggia di Cefalù", photoBg: "linear-gradient(135deg, #004060 0%, #40c0e0 100%)" },
     ],
@@ -155,7 +155,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Magna Grecia sull'acqua",
     intro:
       "Siracusa fu la città più potente del mondo greco-antico, rivale di Atene e Cartagine. Oggi è Patrimonio UNESCO. Ortigia, l'isola storica collegata da un ponte, è un dedalo di vicoli barocchi, mercati di pesce e chiese costruite su templi greci.",
-    heroPhoto: W("3/31/Luftpanorama_von_Syrakus.jpg"),
+    heroPhoto: W("d/dc/Zona_archeologica_di_Siracusa_-_veduta_aerea.jpg"),
     photoBg: "linear-gradient(160deg, #100800 0%, #3a1a00 25%, #7a4a00 50%, #c09040 70%, #7ab0d0 90%, #b0d8f0 100%)",
     highlights: [
       { name: "Ortigia", desc: "L'isola storica — 1 km × 600 m, percorribile a piedi. Piazza del Duomo è una delle più belle d'Italia. Il Duomo è costruito attorno alle colonne di un tempio dorico del V sec. a.C." },
@@ -171,9 +171,9 @@ export const DESTINATIONS: Destination[] = [
     ],
     bestSeason: "Aprile–Giugno e Settembre–Ottobre. L'estate è calda ma il festival vale il viaggio.",
     gallery: [
-      { photo: W("3/31/Luftpanorama_von_Syrakus.jpg", 800), caption: "Siracusa dall'alto", photoBg: "linear-gradient(135deg, #002040 0%, #0060a0 100%)" },
+      { photo: W("d/dc/Zona_archeologica_di_Siracusa_-_veduta_aerea.jpg", 800), caption: "Siracusa dall'alto", photoBg: "linear-gradient(135deg, #002040 0%, #0060a0 100%)" },
       { photo: W("6/62/Teatro_greco_di_Siracusa.jpg", 800), caption: "Teatro Greco", photoBg: "linear-gradient(135deg, #2a1800 0%, #906040 100%)" },
-      { photo: W("0/09/Ortigia%2C_duomo%2C_facciata_01.JPG", 800), caption: "Duomo di Ortigia", photoBg: "linear-gradient(135deg, #001830 0%, #4080c0 100%)" },
+      { photo: W("0/09/Ortigia,_duomo,_facciata_01.JPG", 800), caption: "Duomo di Ortigia", photoBg: "linear-gradient(135deg, #001830 0%, #4080c0 100%)" },
     ],
   },
   {
@@ -185,7 +185,7 @@ export const DESTINATIONS: Destination[] = [
     tagline: "Dove due mari si incontrano",
     intro:
       "Capo Peloro è la punta più nord-orientale della Sicilia — il punto in cui il Mar Ionio e il Mar Tirreno si incontrano visibilmente, con correnti e colori diversi. La laguna è una riserva naturale protetta, con fenicotteri e aironi. Il faro ottocentesco domina lo Stretto. A 15 minuti da Messina.",
-    heroPhoto: W("9/93/Torre_Faro_lighthouse_-_Capo_Peloro_-_Messina%2C_Italy_-_20_Oct._2010.jpg"),
+    heroPhoto: W("9/93/Torre_Faro_lighthouse_-_Capo_Peloro_-_Messina,_Italy_-_20_Oct._2010.jpg"),
     photoBg: "linear-gradient(160deg, #0a3a2a 0%, #0a7e5a 40%, #3ab8a0 70%, #7ad4c8 100%)",
     highlights: [
       { name: "Lo Stretto dalla punta", desc: "Dal promontorio si vedono contemporaneamente la Calabria (a 3,1 km), il faro, la laguna e i due mari con colorazioni diverse. Il tramonto da qui è uno spettacolo naturale rarissimo." },
@@ -201,7 +201,7 @@ export const DESTINATIONS: Destination[] = [
     ],
     bestSeason: "Tutto l'anno. D'estate per il mare, in inverno per l'atmosfera selvaggia. Il tramonto vale qualsiasi stagione.",
     gallery: [
-      { photo: W("9/93/Torre_Faro_lighthouse_-_Capo_Peloro_-_Messina%2C_Italy_-_20_Oct._2010.jpg", 800), caption: "Faro di Torre Faro", photoBg: "linear-gradient(135deg, #003830 0%, #40b890 100%)" },
+      { photo: W("9/93/Torre_Faro_lighthouse_-_Capo_Peloro_-_Messina,_Italy_-_20_Oct._2010.jpg", 800), caption: "Faro di Torre Faro", photoBg: "linear-gradient(135deg, #003830 0%, #40b890 100%)" },
       { photo: W("e/e2/Laghi_di_Ganzirri_-_Messina.jpg", 800), caption: "Laghi di Ganzirri", photoBg: "linear-gradient(135deg, #002820 0%, #308870 100%)" },
       { photo: W("d/d6/Sicilia_Messina1_tango7174.jpg", 800), caption: "Costa dello Stretto", photoBg: "linear-gradient(135deg, #001830 0%, #2060a0 100%)" },
     ],
