@@ -47,8 +47,8 @@ const CITY_HIGHLIGHTS = [
   },
 ];
 
-const W = (path: string) =>
-  `https://upload.wikimedia.org/wikipedia/commons/thumb/${path}/900px-${path.split("/").pop()}`;
+const W = (path: string, w = 1280) =>
+  `https://upload.wikimedia.org/wikipedia/commons/thumb/${path}/${w}px-${path.split("/").pop()}`;
 
 const DAY_TRIPS = [
   {
@@ -164,14 +164,14 @@ export default function MessinaPage() {
 
           <div className="bb-grid-4">
             {[
-              { dir: "NORD", label: "Isole Eolie", sub: "Stromboli, Vulcano, Lipari, Salina", photoBg: "linear-gradient(160deg, #000a1a 0%, #001a4a 50%, #0060c0 100%)", time: "1–2h in aliscafo" },
-              { dir: "SUD", label: "Taormina & Etna", sub: "Costa ionica, Etna, Siracusa, Catania", photoBg: "linear-gradient(160deg, #080400 0%, #3a1500 50%, #c84a00 100%)", time: "45 min – 2h in auto" },
-              { dir: "OVEST", label: "Costa Tirrenica", sub: "Cefalù, Milazzo, Tindari, Palermo", photoBg: "linear-gradient(160deg, #000a08 0%, #004a38 50%, #40b898 100%)", time: "30 min – 2h in auto" },
-              { dir: "EST", label: "Stretto di Messina", sub: "Calabria, Aspromonte, Costa dei Gelsomini", photoBg: "linear-gradient(160deg, #000814 0%, #0a3060 50%, #4a8ac0 100%)", time: "20 min in traghetto" },
+              { dir: "NORD", label: "Isole Eolie", sub: "Stromboli, Vulcano, Lipari, Salina", photoBg: "linear-gradient(160deg, #000a1a 0%, #001a4a 50%, #0060c0 100%)", photo: W("b/b9/Stromboli_und_Strombolicchio.JPG", 600), time: "1–2h in aliscafo" },
+              { dir: "SUD", label: "Taormina & Etna", sub: "Costa ionica, Etna, Siracusa, Catania", photoBg: "linear-gradient(160deg, #080400 0%, #3a1500 50%, #c84a00 100%)", photo: W("2/20/Taormina-Teatro_Greco01.JPG", 600), time: "45 min – 2h in auto" },
+              { dir: "OVEST", label: "Costa Tirrenica", sub: "Cefalù, Milazzo, Tindari, Palermo", photoBg: "linear-gradient(160deg, #000a08 0%, #004a38 50%, #40b898 100%)", photo: W("d/d3/Panorama_view_of_Cefalu,_Sicily,_Italy_(12755655315).jpg", 600), time: "30 min – 2h in auto" },
+              { dir: "EST", label: "Stretto di Messina", sub: "Calabria, Aspromonte, Costa dei Gelsomini", photoBg: "linear-gradient(160deg, #000814 0%, #0a3060 50%, #4a8ac0 100%)", photo: W("9/93/Torre_Faro_lighthouse_-_Capo_Peloro_-_Messina,_Italy_-_20_Oct._2010.jpg", 600), time: "20 min in traghetto" },
             ].map((d) => (
               <div key={d.dir} style={{ borderRadius: "var(--r-lg)", overflow: "hidden", border: "1px solid var(--bb-line)", background: "var(--bb-white)" }}>
                 {/* Photo area */}
-                <div style={{ height: 120, background: d.photoBg, position: "relative", display: "flex", alignItems: "flex-end", padding: "12px 16px" }}>
+                <div style={{ height: 120, background: `url('${d.photo}') center/cover no-repeat, ${d.photoBg}`, position: "relative", display: "flex", alignItems: "flex-end", padding: "12px 16px" }}>
                   <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,.5) 0%, transparent 60%)" }} />
                   <div style={{ position: "relative", zIndex: 1, fontSize: 10, fontWeight: 700, letterSpacing: ".2em", color: "rgba(255,255,255,.9)", textTransform: "uppercase" }}>
                     {d.dir}
