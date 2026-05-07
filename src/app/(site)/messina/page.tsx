@@ -2,6 +2,9 @@ import Link from "next/link";
 import { Button } from "@/components/ui";
 import { DESTINATIONS } from "@/lib/destinations";
 
+const W = (path: string, w = 1280) =>
+  `https://upload.wikimedia.org/wikipedia/commons/thumb/${path}/${w}px-${path.split("/").pop()}`;
+
 const CITY_HIGHLIGHTS = [
   {
     icon: "⛪",
@@ -52,9 +55,6 @@ const CITY_HIGHLIGHTS = [
     photoLabel: "Lungomare di Messina",
   },
 ];
-
-const W = (path: string, w = 1280) =>
-  `https://upload.wikimedia.org/wikipedia/commons/thumb/${path}/${w}px-${path.split("/").pop()}`;
 
 const DAY_TRIPS = [
   {
