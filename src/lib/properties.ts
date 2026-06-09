@@ -6,6 +6,7 @@ export interface RoomType {
   price: number;
   features: string[];
   photoBg: string;
+  photos?: string[];
 }
 
 export interface Property {
@@ -46,8 +47,8 @@ export const PROPERTIES: Property[] = [
     features: ["Wi-Fi gratuito", "Aria condizionata", "Bagno privato", "Biancheria inclusa", "Ingresso indipendente"],
     nearbyPOI: ["Spiaggia Torre Faro (2 min a piedi)", "Ristoranti sul mare", "Faro di Messina", "Traghetto per Villa S. Giovanni (15 min)"],
     rooms: [
-      { id: "atelier-matrimoniale", name: "Camera matrimoniale vista mare", size: 22, maxGuests: 2, price: 98, features: ["Vista mare", "2 ospiti", "22 m²", "Wi-Fi"], photoBg: "linear-gradient(135deg, #5e89b0 0%, #3a6589 100%)" },
-      { id: "atelier-doppia", name: "Camera doppia", size: 18, maxGuests: 2, price: 85, features: ["2 ospiti", "18 m²", "Wi-Fi", "AC"], photoBg: "linear-gradient(135deg, #4a7a9b 0%, #2a5a7a 100%)" },
+      { id: "atelier-matrimoniale", name: "Camera matrimoniale vista mare", size: 22, maxGuests: 2, price: 98, features: ["Vista mare", "2 ospiti", "22 m²", "Wi-Fi"], photoBg: "linear-gradient(135deg, #5e89b0 0%, #3a6589 100%)", photos: ["/camere/atelier/cam1-01.jpg","/camere/atelier/cam1-02.jpg","/camere/atelier/cam1-03.jpg","/camere/atelier/cam1-04.jpg","/camere/atelier/cam1-05.jpg","/camere/atelier/cam1-06.jpg","/camere/atelier/cam1-07.jpg","/camere/atelier/cam1-08.jpg","/camere/atelier/cam1-09.jpg","/camere/atelier/cam1-10.jpg","/camere/atelier/cam1-11.jpg"] },
+      { id: "atelier-doppia", name: "Camera doppia", size: 18, maxGuests: 2, price: 85, features: ["2 ospiti", "18 m²", "Wi-Fi", "AC"], photoBg: "linear-gradient(135deg, #4a7a9b 0%, #2a5a7a 100%)", photos: ["/camere/atelier/cam2-01.jpg","/camere/atelier/cam2-02.jpg","/camere/atelier/cam2-03.jpg","/camere/atelier/cam2-04.jpg","/camere/atelier/cam2-05.jpg","/camere/atelier/cam2-06.jpg","/camere/atelier/cam2-07.jpg"] },
       { id: "atelier-singola", name: "Camera singola", size: 14, maxGuests: 1, price: 62, features: ["1 ospite", "14 m²", "Scrivania", "Wi-Fi"], photoBg: "linear-gradient(135deg, #6a8fa8 0%, #4a6f88 100%)" },
     ],
   },

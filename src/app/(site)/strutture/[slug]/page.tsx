@@ -83,6 +83,7 @@ export default async function PropertyPage({ params }: { params: Promise<{ slug:
               name={room.name}
               badgeLabel={`${room.maxGuests} ${room.maxGuests === 1 ? "ospite" : "ospiti"}`}
               photoBg={room.photoBg}
+              photos={room.photos}
               features={room.features}
               price={room.price}
               priceNote="A NOTTE · BAGNO PRIVATO"

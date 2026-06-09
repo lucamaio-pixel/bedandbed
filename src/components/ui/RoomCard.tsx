@@ -7,6 +7,7 @@ export interface RoomCardProps {
   name: string;
   badgeLabel: string;
   photoBg?: string;
+  photos?: string[];
   features: string[];
   price: number;
   priceNote?: string;
@@ -17,11 +18,17 @@ export function RoomCard({
   name,
   badgeLabel,
   photoBg = "linear-gradient(135deg, #5e89b0 0%, #3a6589 100%)",
+  photos,
   features,
   price,
   priceNote = "A NOTTE",
   onBook,
 }: RoomCardProps) {
+  const heroPhoto = photos?.[0];
+  const bgStyle = heroPhoto
+    ? `url('${heroPhoto}') center/cover no-repeat, ${photoBg}`
+    : photoBg;
+
   return (
     <article
       style={{
@@ -37,32 +44,48 @@ export function RoomCard({
       <div
         style={{
           aspectRatio: "4/3",
-          background: photoBg,
+          background: bgStyle,
           position: "relative",
           display: "flex",
           alignItems: "flex-end",
           padding: 14,
         }}
       >
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            background:
-              "repeating-linear-gradient(45deg, rgba(255,255,255,.04) 0 8px, transparent 8px 16px)",
-          }}
-        />
-        <Badge
-          variant="blue"
-          style={{
-            position: "relative",
-            zIndex: 1,
-            background: "var(--bb-white)",
-            color: "var(--bb-blue)",
-          }}
-        >
-          {badgeLabel}
-        </Badge>
+        {!heroPhoto && (
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              background:
+                "repeating-linear-gradient(45deg, rgba(255,255,255,.04) 0 8px, transparent 8px 16px)",
+            }}
+          />
+        )}
+        {heroPhoto && (
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              background: "linear-gradient(to top, rgba(0,0,0,.4) 0%, transparent 50%)",
+            }}
+          />
+        )}
+        <div style={{ position: "relative", zIndex: 1, display: "flex", justifyContent: "space-between", alignItems: "flex-end", width: "100%" }}>
+          <Badge
+            variant="blue"
+            style={{
+              background: "var(--bb-white)",
+              color: "var(--bb-blue)",
+            }}
+          >
+            {badgeLabel}
+          </Badge>
+          {photos && photos.length > 1 && (
+            <span style={{ fontSize: 11, fontWeight: 600, color: "rgba(255,255,255,.9)", background: "rgba(0,0,0,.4)", borderRadius: "var(--r-pill)", padding: "3px 8px", letterSpacing: ".04em" }}>
+              📷 {photos.length} foto
+            </span>
+          )}
+        </div>
       </div>
 
       {/* body */}
